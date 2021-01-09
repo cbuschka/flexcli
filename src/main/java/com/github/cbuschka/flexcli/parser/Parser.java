@@ -80,7 +80,7 @@ public class Parser
 			case ARGUMENT:
 			{
 				com.github.cbuschka.flexcli.scanner.Token keyToken = this.tokenStack.remove(this.tokenStack.size() - 1);
-				this.buffer.add(new Token(TokenType.SUB_COMMAND_OPTION_KEY, keyToken.key, null, keyToken.pos, token.raw));
+				this.buffer.add(new Token(TokenType.SUB_COMMAND_OPTION_KEY, keyToken.key, null, keyToken.pos, keyToken.raw));
 				this.buffer.add(new Token(TokenType.ARGUMENT, null, token.value, token.pos, token.raw));
 				this.state = ParserState.SUB_COMMAND_SEEN;
 			}
@@ -88,7 +88,7 @@ public class Parser
 			case EOF:
 			{
 				com.github.cbuschka.flexcli.scanner.Token keyToken = this.tokenStack.remove(this.tokenStack.size() - 1);
-				this.buffer.add(new Token(TokenType.SUB_COMMAND_OPTION_KEY, keyToken.key, null, keyToken.pos, token.raw));
+				this.buffer.add(new Token(TokenType.SUB_COMMAND_OPTION_KEY, keyToken.key, null, keyToken.pos, keyToken.raw));
 				this.buffer.add(new Token(TokenType.EOF, null, null, token.pos, token.raw));
 			}
 			break;
@@ -104,7 +104,7 @@ public class Parser
 			case ARGUMENT:
 			{
 				com.github.cbuschka.flexcli.scanner.Token keyToken = this.tokenStack.remove(this.tokenStack.size() - 1);
-				this.buffer.add(new Token(TokenType.GLOBAL_OPTION_KEY, keyToken.key, null, keyToken.pos, token.raw));
+				this.buffer.add(new Token(TokenType.GLOBAL_OPTION_KEY, keyToken.key, null, keyToken.pos, keyToken.raw));
 				this.buffer.add(new Token(TokenType.ARGUMENT, null, token.value, token.pos, token.raw));
 				this.state = ParserState.INITIAL;
 			}
@@ -112,7 +112,7 @@ public class Parser
 			case EOF:
 			{
 				com.github.cbuschka.flexcli.scanner.Token keyToken = this.tokenStack.remove(this.tokenStack.size() - 1);
-				this.buffer.add(new Token(TokenType.GLOBAL_OPTION_KEY, keyToken.key, null, keyToken.pos, token.raw));
+				this.buffer.add(new Token(TokenType.GLOBAL_OPTION_KEY, keyToken.key, null, keyToken.pos, keyToken.raw));
 				this.buffer.add(new Token(TokenType.EOF, null, null, token.pos, token.raw));
 				this.state = ParserState.END;
 			}

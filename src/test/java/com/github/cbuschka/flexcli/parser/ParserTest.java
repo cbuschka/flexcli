@@ -90,8 +90,8 @@ public class ParserTest
 
 		assertThat(this.tokens).isEqualTo(Arrays.asList(
 				new Token(TokenType.SUB_COMMAND, null, "subcommand", 0, "subcommand"),
-				new Token(TokenType.SUB_COMMAND_OPTION_KEY, "key", null, 11, "--key=value"),
-				new Token(TokenType.EOF, null, null, 14, null)));
+				new Token(TokenType.SUB_COMMAND_OPTION_KEY, "key", null, 11, "--key"),
+				new Token(TokenType.EOF, null, null, 16, null)));
 	}
 
 	@Test
